@@ -90,7 +90,7 @@ let negatedRegex = /[^0-9aeiou]/ig
 let result = negatedSample.match(negatedRegex)
 console.log(result) */
 
-//Match Character that occurs one or more time. To match a character that occur one or more than one times, we use the plus (+) character. In thi example we have matched characters that occur one or more than one times
+//Match Character that occurs one or more time. To match a character that occur one or more than one times, we use the plus (+) character. In this example we have matched characters that occur one or more than one times
 // Example 14
 /* let difficultSpelling = "Mississippi"
 let spellingRegex = /[s+]/ig
@@ -123,10 +123,196 @@ console.log(result) */
 
 //Finding One or More Criminals in a Hunt
 //Example 18
-let crowd = "P1P2P3P4P5P6CCCP7P8P9"
-
+/* let crowd = "P1P2P3P4P5P6CCCP7P8P9"
 let reCriminals = /C+/
 let matchedCriminals = crowd.match(reCriminals)
-console.log(matchedCriminals)
+console.log(matchedCriminals) */
 
-//Matching Beginning String Pattersns
+//Matching Beginning String Patterns: The caret(^) alone can be used to match the beginning of a string alone
+//Example 19
+/* let rickyAndCal = "Cal and Ricky both  like racing."
+let calRegex = /^Cal/
+let result = calRegex.test(rickyAndCal)
+console.log(result) */
+
+//Matching Ending String Patterns>. The dollar($) alone can be used to match the ending of a string alone.
+//Example 20
+/* let caboose = "The last car on caboose a train is the"
+let lastRegex = /caboose$/
+let result = lastRegex.test(caboose)
+console.log(result) */
+
+//Matching all letters and numbers. \w is a shorthand way of matching any letter, number or underscore. 
+// Note: lowercase w(w) is used for getting numbers and letters
+//Example 21
+/* let quoteSample = "The five boxing wizards jump quickly"
+let alphabetRegexV2 = /\w/g
+let result = quoteSample.match(alphabetRegexV2).length
+console.log(result) */
+
+//Matching Everything But Letters and Numbers. /W is a shorthand way for matching everything but letters and numbers. 
+// Note: uppercase w(W) is used for getting everything but letters and numbers.
+//Example 22
+/* let quoteSample = "The five boxing wizards jump quickly"
+let alphabetRegexV2 = /\W/g
+let result = quoteSample.match(alphabetRegexV2).length
+console.log(result) */
+
+//Match All Numbers. The shorthand way for matching all numbers is \d
+//Example 23
+//Note: lowercase d(d) is used for getting all numbers.
+/* let numString = "Your sandwich will be $5.00"
+let numRegex = /\d/g
+let result = numString.match(numRegex).length
+console.log(result) */
+
+//Matching Non-numbers. The shorthand way for matching all non-number is uppercase d(D)
+//Example 24
+//Note. uppercase d(D) is used for getting non-numbers
+/* let numString = "Your sandwich will be $5.00"
+let noNumRegex = /\D/g
+result = numString.match(noNumRegex).length
+console.log(result) */
+
+//Restricting possible Usernames.
+/* Three requirements for the username
+1. If there are numbers, they must be at the end.
+2. Letters can be lowercase and uppercase.
+3. At least two characters long. Two-letter names can't have numbers. */
+
+//Example 25
+/* let username = "JackOfAllTrades"
+let userCheck = /[A-Za-z]{2,}\d*$/g
+let result = username.match(userCheck)
+console.log(result) */
+                                        
+                                               //Matching all Whitespaces.
+//Matching all whitespaces. The shorthand space for matching all whitespaces is (\s). (\s) can be used to match a space, a character turn, a tab, a form field, and a newline character.
+
+//Example 26
+/* let sample = "Whitespaces is important in separating words"
+let countWhiteSpace = /\s/g
+let result = sample.match(countWhiteSpace)
+console.log(result) */
+
+
+                                                //Matching all Non-Whitespace.
+//Matching all Non-Whitespace. The shorthand space for matching all whitespaces is uppercase s(\S) (\S). (\S) can be used to match a non-whitespace.
+
+//Example 27
+/* let sample = "Whitespaces is important in separating words"
+let countWhiteSpace = /\S/g
+let result = sample.match(countWhiteSpace)
+console.log(result) */
+
+
+                                                //Specify Upper and Lower Number of Matches
+//Matching Upper and Lower Number of matches. We can specify the Upper and Lower number of matches using quantity specifier ({}). Quantity specifiers are used with curly brackets.
+
+//Example 28
+/* let ohStr = "Ohhh no"
+let ohRegex = /Oh{3,6} no/
+let result = ohRegex.test(ohStr)
+console.log(result) */
+
+                                                //Specify only Lower Number of Matches
+//Matching only Lower Number of matches. We can specify only the Lower number of matches using  the letter and quantity specifier ({}). Quantity specifiers are used with curly brackets. e.g /z{3,}/
+
+//Example 29
+/* 
+let ohStr = "Hazzzzah"
+let ohRegex = /z{2,6}/
+let result = ohRegex.test(ohStr)
+console.log(result) */
+
+                                                //Specify Exact Number of Matches
+//Matching Exact Number of matches. We can use quantity specifiers to specify the exact number of matches instead of the lower and upper bound. Quantity specifiers are used with curly brackets. E.g if we want to search for Timmmmber with exactly four m. we can use "Tim{4}ber"
+
+//Example 30
+/* let timStr = "Timmmmber"
+let timRegex = /Tim{4}ber/
+let result = timRegex.test(timStr)
+console.log(result) */
+
+
+
+                                                //Check for All or None
+//We can specify the possible existence of an element using the question mark(?). It checks for zero or one of the preceding element.
+
+//Example 31
+/* let favWord = "favorite"
+let favRegex = /favou?rite/
+let result = favRegex.test(favWord)
+console.log(result) */
+
+                                                //Positive and Negative Lookahead
+//Lookahead in Javascript are patterns in javascript that tells javascript to lookahead in your strings to check for patterns further along. It can be useful when we want to search for multiple patterns over the same string. There are positive Lookaheads and negative Lookaheads. positive lookaheads are represented using (?=(letter)) and negative lookaheads are represented using (?!(letter))
+
+//Note: A typical use of lookaheads is to check two or more patterns in one string.
+
+//Example 32
+/* let quit = "qu"
+let noquit = "qt"
+
+let quRegex = /q(?=u)/
+let qRegex = /q(?!u)/
+let result = noquit.match(qRegex)
+console.log(result) */
+
+//Typical example of lookaheads. we will use lookaheads to match passwords that are greater than 5 characters and contains two consecutive digits.
+
+/* let sampleWord = "stronaaut11"
+let pwRegex = /(?=\w{5})(?=\D*\d{2})/
+let result = pwRegex.test(sampleWord)
+console.log(result) */
+
+
+                                        //Reuse Patterns Using Capture Groups
+//We can group things we are searching for in a regex using parenthesis
+
+//Example 1 
+/* let repeatStr = "regex"
+let repeatRegex = /(\w+)\s\1/
+let result = repeatRegex.test(repeatStr) // Returns true
+console.log(result) */
+
+//Example 2
+/* let repeatNum = "12 12 12"
+let regex = /^(\d+)\s\1\s\1$/
+let result = regex.test(repeatNum)
+console.log(result) */
+
+
+                                        //Use Capture Groups to Search and Replace
+//We can search and replace text on a string using the replace function on a string.
+//The input for replace is first the regex pattern you want to search for and the second is the string to replace the match and the function to do something.
+
+/* let firstRegex = /(\w+)\s(w+)/
+let result = "Code Camp".replace(firstRegex, "$2 $1")
+console.log(result) */
+
+//Example 1
+/* let wrongText = "The sky is silver."
+let silverRegex = /silver/
+let result = wrongText.replace(silverRegex, "Yellow")
+console.log(result) */
+
+//Example 2
+/* let huhText = "This sandwich is good"
+let fixRegex = /good/
+let replaceText = "okey-dokey"
+let result = huhText.replace(fixRegex, replaceText)
+console.log(result) */
+
+                                        //Remove Whitespace from start and end
+/* let hello = "  Hello, World! "
+let wsRegex = /^\s+|\s+$/g
+let result = hello.replace(wsRegex, '')
+console.log(result) */
+                                       //Matching all characters except from letters and numbers
+//We use the [^a-zA-Z0-9] to match all characters except from letters and numbers.
+//Example 1
+/* let allCharacters = "How are, you. doing? let's go and, eat. if&you%"
+let regex = /[^a-zA-Z0-9]/g
+let result = allCharacters.test(regex)
+console.log(result) */
