@@ -14,60 +14,60 @@ console.log("The length of quote is :", quoteLength)
 
 // indexOf is used for getting the position of a particular character
 
-/* let firstChar = quote[0]
-let lastChar = quote[42] */
-// console.log("First Character is:", firstChar + "The Last Character is: ", lastChar)
+let firstChar = quote[0]
+let lastChar = quote[42]
+console.log("First Character is:", firstChar + "The Last Character is: ", lastChar)
 
-/* const lazyIndex = quote.indexOf('lazy')
-console.log(lazyIndex) */
+const lazyIndex = quote.indexOf('lazy')
+console.log(lazyIndex)
 
-/* const hIndex = quote.indexOf('h')
-console.log(hIndex) */
+const hIndex = quote.indexOf('h')
+console.log(hIndex)
 
-/* const x1 =quote.indexOf('x')
+const x1 =quote.indexOf('x')
 const x2 =quote.lastIndexOf('x')
 
-console.log(x1, x2) */
+console.log(x1, x2)
 
-/* const noSpace = quote.split(" ")
-console.log(noSpace) */
+const noSpace = quote.split(" ")
+console.log(noSpace)
 
-/* const letterE = quote.split("e")
-console.log(letterE) */
+const letterE = quote.split("e")
+console.log(letterE)
 
 //toUpperCase
-/* const upper = quote.toUpperCase()
-console.log(upper) */
+const upper = quote.toUpperCase()
+console.log(upper)
 
 //toLowerCase
-/* const lower = quote.toLowerCase()
-console.log(lower) */
+const lower = quote.toLowerCase()
+console.log(lower)
 
 //split
-/* const noSpace = quote.split(' ', 5)
-console.log(noSpace) */
+const noSpaceAgain = quote.split(' ', 5)
+console.log(noSpaceAgain)
 
 //concat
 
 //startsWith
-/* const begin = quote.startsWith('A')
-console.log(begin) */
+const begin = quote.startsWith('A')
+console.log(begin)
 
 //endsWith
-/* const end = quote.endsWith('fish')
-console.log('String ends with: ', end) */
+const end = quote.endsWith('fish')
+console.log('String ends with: ', end)
 
 //includes
-/* const exist = quote.includes('pen')
-console.log('Does it include pen? ', exist) */
+const exist = quote.includes('pen')
+console.log('Does it include pen? ', exist)
 
 //charAt
-/* const whichChar = quote.charAt(10)
-console.log('character at index 10: ', whichChar) */
+const whichChar = quote.charAt(10)
+console.log('character at index 10: ', whichChar)
 
 //replace and replaceAll
-/* const removeAnimals = quote.replace(/fox|penguin|goat|cow|dog/g, '***')
-console.log("When animals are removed: ", removeAnimals) */
+const removeAnimals = quote.replace(/fox|penguin|goat|cow|dog/g, '***')
+console.log("When animals are removed: ", removeAnimals)
 
 trimming = "Hello JavaScript How Are You"
 console.log(trimming.length)

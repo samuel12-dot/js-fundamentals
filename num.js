@@ -14,16 +14,16 @@ console.log(difference) */
 
 //Type Conversion
 //Example 1 - converting from number to string
-/* let num = 12
+let num = 12
 num += '' ** 1
-console.log(typeof num) */
+console.log(typeof num)
 
 //Example 2 - converting string to number
 //Methods : multiply 1 or divide by 1 or raise to power of 1 or subtract 0
 
 
-/* console.log(Math.ceil(4.4))
-console.log(Math.floor(4.8)) */
+console.log(Math.ceil(4.4))
+console.log(Math.floor(4.8))
 
 let name = 'Samuel'
 let age = 100
