@@ -1,6 +1,6 @@
 //Number Data types
 
-/* let score1 = 12
+let score1 = 12
 let score2 = 36
 let score3 = 72
 
@@ -10,7 +10,7 @@ console.log(score)
 
 // Subtraction
 const difference = score1 - score2 - score3
-console.log(difference) */
+console.log(difference)
 
 //Type Conversion
 //Example 1 - converting from number to string

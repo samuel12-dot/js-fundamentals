@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atm application</title>
+</head>
+<body>
+    <script>
+        let balance = 100000
+
+        do{
+            let recharge = prompt(`Enter the amount you want to recharge Your account balance is ${balance.toLocaleString()} `)
+
+            if(recharge == 0) {
+                alert('Enter a valid number')
+            }
+            else if(recharge > balance) {
+                alert(`Insufficient balance. Your balance is ${balance.toLocaleString()}`)
+            }
+            else {
+                balance -= recharge
+                alert(`Recharge successful.\nYour current balance is ${balance.toLocaleString()}`)
+            }
+        }
+        while(confirm('Do you wish to perform another transaction?'))
+    </script>
+</body>
+</html>
